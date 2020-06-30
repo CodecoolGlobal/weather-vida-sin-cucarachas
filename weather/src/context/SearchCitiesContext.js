@@ -3,10 +3,10 @@ import React, { useState, createContext } from "react";
 export const SearchCitiesContext = createContext();
 
 export const SearchCitiesProvider = (props) => {
-  const [cityData, setCityData] = useState([]);
+  const [citySearchData, setCitySearchData] = useState();
 
   return (
-    <SearchCitiesContext.Provider value={[cityData, setCityData]}>
+    <SearchCitiesContext.Provider value={[citySearchData, setCitySearchData]}>
       {props.children}
     </SearchCitiesContext.Provider>
   );

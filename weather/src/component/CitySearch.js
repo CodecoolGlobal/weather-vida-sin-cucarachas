@@ -1,37 +1,40 @@
 import React, { useState, useContext, useEffect } from "react";
 import { Redirect, Link } from "react-router-dom";
-import { SearchCitiesContext } from "../context/SearchCitiesContext";
-import axios from "axios";
+import { DefaultCitiesContext } from "../context/DefaultCitiesContext";
 
 const CitySearch = (props) => {
+  const { defaultCities, searchString } = useContext(DefaultCitiesContext);
+  const [searchStringData, setSearchString] = searchString;
   const [searchCity, setSearchCity] = useState("");
-  const [cities, setCities] = useContext(SearchCitiesContext);
 
   const changeSearchData = (e) => {
     setSearchCity(e.target.value);
+    console.log(searchCity);
   };
 
   const submitSearchData = (e) => {
+    console.log("submit fired");
     e.preventDefault();
-    locationSearch();
-    window.location.replace("/search");
+    console.log("searchCity (CitySearch state): " + searchCity);
+    //setSearchString(searchCity);
+    //console.log("context searchstring: " + searchStringData);
+    //console.log("cityData: " + props.searchString);
+
+    //locationSearch();
+
+    //window.location.replace("/search");
     //<Redirect to="/search" />
   };
 
-  function locationSearch() {
-    const url = `https://www.metaweather.com/api/location/search/?query=${searchCity}`;
-    axios.get(url).then((res) => {
-      setCities(res.data);
-      console.log(cities);
-    });
-  }
-
   return (
     <div>
-      <form onSubmit={submitSearchData}>
-        <input type="text" value={searchCity} onChange={changeSearchData} />
-        <input type="submit" value="submit" />
-      </form>
+      <input type="text" value={searchCity} onChange={changeSearchData} />
+      <Link to={{ path: "/search", query: { searchString: searchCity } }}>
+        {/* <button type="button" value="submit">
+          Search
+        </button> */}
+        Search
+      </Link>
     </div>
   );
 };

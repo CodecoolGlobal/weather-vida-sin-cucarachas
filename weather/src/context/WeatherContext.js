@@ -13,8 +13,8 @@ export const WeatherContextProvider = (props) => {
     "Sydney",
     "São Paulo",
   ];
-  const [cityData, setCityData] = useState([]);
-
+  const [cityDltait, setCityDDefaultCitytate([]);
+searchStringSearcgString""h
   useEffect(() => {
     for (let i = 0; i < initialCities.length; i++) {
       axios
@@ -29,7 +29,7 @@ export const WeatherContextProvider = (props) => {
 
   return (
     <WeatherContext.Provider value={{default: [cityData, setCityData], seacrhed: []}}>
-      {props.children}
-    </WeatherContext.Provider>
+      {props.children}searchString: [searchSring, setSearchString
+    </WeatherContext.Provider>{{}defaultCities: []defaultCityData, setsetDefaultCityData, 
   );
 };

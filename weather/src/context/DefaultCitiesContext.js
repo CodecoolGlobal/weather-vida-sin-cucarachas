@@ -8,12 +8,13 @@ export const DefaultCitiesContextProvider = (props) => {
     "London",
     "Budapest",
     "Tokyo",
-    "Cairo",
-    "New York",
-    "Sydney",
-    "São Paulo",
+    //"Cairo",
+    //"New York",
+    //"Sydney",
+    //"São Paulo",
   ];
-  const [cityData, setCityData] = useState([]);
+  const [defaultCityData, setDefaultCityData] = useState([]);
+  const [searchStringData, setSearchString] = useState("");
 
   useEffect(() => {
     for (let i = 0; i < initialCities.length; i++) {
@@ -22,13 +23,18 @@ export const DefaultCitiesContextProvider = (props) => {
           `https://www.metaweather.com/api/location/search/?query=${initialCities[i]}`
         )
         .then((res) => {
-          setCityData((oldCityData) => [...oldCityData, res.data[0]]);
+          setDefaultCityData((oldCityData) => [...oldCityData, res.data[0]]);
         });
     }
   }, []);
 
   return (
-    <DefaultCitiesContext.Provider value={[cityData, setCityData]}>
+    <DefaultCitiesContext.Provider
+      value={{
+        defaultCities: [defaultCityData, setDefaultCityData],
+        searchString: [searchStringData, setSearchString],
+      }}
+    >
       {props.children}
     </DefaultCitiesContext.Provider>
   );

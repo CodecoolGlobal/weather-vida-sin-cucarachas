@@ -1,14 +1,14 @@
-import React, { useContext } from "react";
+import React, { useState } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import CityTable from "./component/CityTable";
+import CityTableSearch from "./component/CityTableSearch";
 import CityDetailWeek from "./component/CityDetailWeek";
 import CitySearch from "./component/CitySearch";
-import { DefaultCitiesContext } from "./context/DefaultCitiesContext";
-import { SearchCitiesContext } from "./context/SearchCitiesContext";
+import { DefaultCitiesContextProvider } from "./context/DefaultCitiesContext";
 
-function App() {
-  const [cities] = useContext(DefaultCitiesContext);
-  const [searchCities] = useContext(SearchCitiesContext);
+const App = (props) => {
+  //const [searchStringData, setSearchString] = useState("testString");
+  //console.log({ searchStringData });
 
   return (
     <Router>
@@ -19,8 +19,10 @@ function App() {
             path="/"
             render={(props) => (
               <div>
-                <CitySearch />
-                <CityTable cities={cities} />
+                <React.Fragment>
+                  <CitySearch />
+                  <CityTable />
+                </React.Fragment>
               </div>
             )}
           />
@@ -29,8 +31,11 @@ function App() {
             path="/search"
             render={(props) => (
               <div>
-                <CitySearch />
-                <CityTable cities={searchCities} />
+                <React.Fragment>
+                  <CityTableSearch
+                    searchStringFromURL={props.location.query.searchString}
+                  />
+                </React.Fragment>
               </div>
             )}
           />
@@ -39,7 +44,9 @@ function App() {
             path="/weather/:woeid"
             render={(props) => (
               <div>
-                <CityDetailWeek weather={props.location.query.cityWeather} />
+                <React.Fragment>
+                  <CityDetailWeek weather={props.location.query.cityWeather} />
+                </React.Fragment>
               </div>
             )}
           />
@@ -47,6 +54,6 @@ function App() {
       </div>
     </Router>
   );
-}
+};
 
 export default App;
