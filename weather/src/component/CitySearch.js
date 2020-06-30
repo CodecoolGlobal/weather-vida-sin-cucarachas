@@ -8,21 +8,19 @@ const CitySearch = (props) => {
   const [cities, setCities] = useContext(SearchCitiesContext);
 
   const changeSearchData = (e) => {
-    setSearchCity(e.target.value);
+    // setSearchCity(e.target.value);
   };
 
   const submitSearchData = (e) => {
-    e.preventDefault();
-    locationSearch();
-    window.location.replace("/search");
-    //<Redirect to="/search" />
+    // e.preventDefault();
+    // locationSearch();
+    // window.location.replace("/search");
   };
 
   function locationSearch() {
     const url = `https://www.metaweather.com/api/location/search/?query=${searchCity}`;
     axios.get(url).then((res) => {
       setCities(res.data);
-      console.log(cities);
     });
   }
 
