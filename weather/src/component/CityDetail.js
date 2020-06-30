@@ -10,7 +10,6 @@ const CityDetail = (props) => {
   useEffect(() => {
     const url = `https://cors-anywhere.herokuapp.com/https://www.metaweather.com/api/location/${props.city.woeid}`;
     axios.get(url).then((res) => setWeather(res.data.consolidated_weather));
-    console.log(weather);
     axios.get(url).then((res) => setSunrise(res.data.sun_rise));
     axios.get(url).then((res) => setSunset(res.data.sun_set));
   }, []);
