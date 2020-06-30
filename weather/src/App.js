@@ -1,9 +1,15 @@
-import React from "react";
+import React, { useContext } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import CityTable from "./component/CityTable";
 import CityDetailWeek from "./component/CityDetailWeek";
+import CitySearch from "./component/CitySearch";
+import { DefaultCitiesContext } from "./context/DefaultCitiesContext";
+import { SearchCitiesContext } from "./context/SearchCitiesContext";
 
 function App() {
+  const [cities] = useContext(DefaultCitiesContext);
+  const [searchCities] = useContext(SearchCitiesContext);
+
   return (
     <Router>
       <div className="App">
@@ -13,7 +19,18 @@ function App() {
             path="/"
             render={(props) => (
               <div>
-                <CityTable />
+                <CitySearch />
+                <CityTable cities={cities} />
+              </div>
+            )}
+          />
+          <Route
+            exact
+            path="/search"
+            render={(props) => (
+              <div>
+                <CitySearch />
+                <CityTable cities={searchCities} />
               </div>
             )}
           />

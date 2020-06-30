@@ -1,12 +1,15 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
-import { WeatherContextProvider } from "./context/WeatherContext";
+import { DefaultCitiesContextProvider } from "./context/DefaultCitiesContext";
+import { SearchCitiesProvider } from "./context/SearchCitiesContext";
 ReactDOM.render(
   <React.StrictMode>
-    <WeatherContextProvider>
-      <App />
-    </WeatherContextProvider>
+    <DefaultCitiesContextProvider>
+      <SearchCitiesProvider>
+        <App />
+      </SearchCitiesProvider>
+    </DefaultCitiesContextProvider>
   </React.StrictMode>,
   document.getElementById("root")
 );

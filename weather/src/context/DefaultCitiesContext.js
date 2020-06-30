@@ -1,9 +1,9 @@
 import React, { useState, useEffect, createContext } from "react";
 import axios from "axios";
 
-export const WeatherContext = createContext();
+export const DefaultCitiesContext = createContext();
 
-export const WeatherContextProvider = (props) => {
+export const DefaultCitiesContextProvider = (props) => {
   const initialCities = [
     "London",
     "Budapest",
@@ -28,8 +28,8 @@ export const WeatherContextProvider = (props) => {
   }, []);
 
   return (
-    <WeatherContext.Provider value={{default: [cityData, setCityData], seacrhed: []}}>
+    <DefaultCitiesContext.Provider value={[cityData, setCityData]}>
       {props.children}
-    </WeatherContext.Provider>
+    </DefaultCitiesContext.Provider>
   );
 };
