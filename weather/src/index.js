@@ -1,10 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
+import { DefaultCitiesProvider } from "./context/DefaultCitiesContext";
 
 ReactDOM.render(
-  <React.StrictMode>
+  <DefaultCitiesProvider>
     <App />
-  </React.StrictMode>,
+  </DefaultCitiesProvider>,
   document.getElementById("root")
 );
