@@ -5,5 +5,7 @@ import DisplayCity from "./DisplayCity";
 export default function AllDefaultCities() {
   const [defaultCityData] = useContext(DefaultCitiesContext);
 
-  return defaultCityData.map((city) => <DisplayCity city={city} />);
+  return defaultCityData.map((city) => (
+    <DisplayCity key={city.woeid} city={city} />
+  ));
 }

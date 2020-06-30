@@ -21,13 +21,13 @@ export default function DisplayCity(props) {
         <h3>{"Current Weather:" + weather[0].weather_state_name}</h3>
         <h3>{"Date: " + weather[0].applicable_date}</h3>
         <h3>{"Wind Speed: " + weather[0].wind_speed}</h3>
-        <h3>{"Max temperature: " + weather[0].min_temp}</h3>
-        <h3>{"Min temperature: " + weather[0].max_temp}</h3>
+        <h3>{"Min temperature: " + weather[0].min_temp}</h3>
+        <h3>{"Max temperature: " + weather[0].max_temp}</h3>
 
         <Link
           to={{
             pathname: `/weekly-forecast/${props.city.woeid}`,
-            query: { cityWeather: weather },
+            query: { cityWeather: weather, title: props.city.title },
           }}
         >
           <h3>Weekly Forecast</h3>

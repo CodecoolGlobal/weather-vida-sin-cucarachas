@@ -14,5 +14,7 @@ export default function SearchResult() {
 
   console.log(resultCities);
 
-  return resultCities.map((city) => <DisplayCity city={city} />);
+  return resultCities.map((city) => (
+    <DisplayCity key={city.woeid} city={city} />
+  ));
 }
