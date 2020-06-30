@@ -8,7 +8,7 @@ const CityDetail = (props) => {
   const [sunset, setSunset] = useState();
 
   useEffect(() => {
-    const url = `https://cors-anywhere.herokuapp.com/https://www.metaweather.com/api/location/${props.city.woeid}`;
+    const url = `https://www.metaweather.com/api/location/${props.city.woeid}`;
     axios.get(url).then((res) => {
       setWeather(res.data.consolidated_weather);
       setSunrise(res.data.sun_rise);

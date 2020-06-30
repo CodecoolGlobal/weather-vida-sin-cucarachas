@@ -19,7 +19,7 @@ const CitySearch = (props) => {
   };
 
   function locationSearch() {
-    const url = `https://cors-anywhere.herokuapp.com/https://www.metaweather.com/api/location/search/?query=${searchCity}`;
+    const url = `https://www.metaweather.com/api/location/search/?query=${searchCity}`;
     axios.get(url).then((res) => {
       setCities(res.data);
       console.log(cities);

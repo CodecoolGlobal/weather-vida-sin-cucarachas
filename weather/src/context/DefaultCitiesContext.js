@@ -19,7 +19,7 @@ export const DefaultCitiesContextProvider = (props) => {
     for (let i = 0; i < initialCities.length; i++) {
       axios
         .get(
-          `https://cors-anywhere.herokuapp.com/https://www.metaweather.com/api/location/search/?query=${initialCities[i]}`
+          `https://www.metaweather.com/api/location/search/?query=${initialCities[i]}`
         )
         .then((res) => {
           setCityData((oldCityData) => [...oldCityData, res.data[0]]);
