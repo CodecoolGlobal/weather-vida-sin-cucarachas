@@ -1,6 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import CityTable from "./component/CityTable";
+import CityDetailWeek from "./component/CityDetailWeek";
 
 function App() {
   return (
@@ -13,6 +14,15 @@ function App() {
             render={(props) => (
               <div>
                 <CityTable />
+              </div>
+            )}
+          />
+          <Route
+            exact
+            path="/weather/:woeid"
+            render={(props) => (
+              <div>
+                <CityDetailWeek weather={props.location.query.cityWeather} />
               </div>
             )}
           />
