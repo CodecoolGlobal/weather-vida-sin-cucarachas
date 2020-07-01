@@ -18,9 +18,17 @@ export default function DisplayCity(props) {
     return (
       <div>
         <h2>{props.city.title}</h2>
+        <h3>{"Current Temperature:" + weather[0].the_temp}</h3>
         <h3>{"Current Weather:" + weather[0].weather_state_name}</h3>
         <h3>{"Date: " + weather[0].applicable_date}</h3>
+        <img
+          src={`https://www.metaweather.com/static/img/weather/${weather[0].weather_state_abbr}.svg`}
+          alt={weather[0].weather_state_abbr}
+          width="64"
+          height="64"
+        />
         <h3>{"Wind Speed: " + weather[0].wind_speed}</h3>
+        <h3>{"Wind Direction: " + weather[0].wind_direction}</h3>
         <h3>{"Min temperature: " + weather[0].min_temp}</h3>
         <h3>{"Max temperature: " + weather[0].max_temp}</h3>
 

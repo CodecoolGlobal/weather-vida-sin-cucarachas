@@ -3,7 +3,7 @@ import { CatFactContext } from "../context/CatFactContext";
 import styled from "styled-components";
 
 const CatFact = () => {
-  const [catFact, setCatFact] = useContext(CatFactContext);
+  const [catFact] = useContext(CatFactContext);
 
   const CatParagraph = styled.p`
     position: relative;
