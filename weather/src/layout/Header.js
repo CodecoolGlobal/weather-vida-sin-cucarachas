@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import Search from "../component/Search";
 import { UnitContext } from "../context/UnitContext";
+import { Button } from "@material-ui/core";
 
 export default function Header() {
   const { temp, speed, speedAdjust, tempAdjust, tempAdjust32 } = useContext(
@@ -23,7 +24,9 @@ export default function Header() {
   return (
     <div>
       <Search />
-      <button onClick={switchUnit}>unit</button>
+      <Button onClick={switchUnit} color="primary">
+        unit
+      </Button>
       <div>{tempUnit}</div>
       <div>{speedUnit}</div>
     </div>
