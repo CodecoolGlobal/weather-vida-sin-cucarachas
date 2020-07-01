@@ -8,7 +8,7 @@ const CatDisplay = () => {
 
   const getCatFact = () => {
     axios
-      .get("https://catfact.ninja/fact")
+      .get("https://catfact.ninja/fact?max_length=125")
       .then((res) => setCatFact(res.data.fact));
     console.log(catFact);
   };
