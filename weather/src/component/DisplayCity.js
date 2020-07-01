@@ -2,6 +2,7 @@ import React, { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import { UnitContext } from "../context/UnitContext";
+import PictureCity from "./PictureCity";
 
 export default function DisplayCity(props) {
   const [weather, setWeather] = useState([]);
@@ -26,6 +27,7 @@ export default function DisplayCity(props) {
   } else {
     return (
       <div>
+        <PictureCity title={props.city.title} />
         <h2>{props.city.title}</h2>
         <h3>{`Current Temperature: ${Math.ceil(
           weather[0].the_temp * tempAd + tempAd32
