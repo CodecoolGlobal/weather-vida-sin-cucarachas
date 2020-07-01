@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { CatFactContext } from "../context/CatFactContext";
-import "../cat.scss";
+import "../style/cat.scss";
 import axios from "axios";
 
 const CatDisplay = () => {
