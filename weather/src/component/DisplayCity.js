@@ -10,7 +10,7 @@ export default function DisplayCity(props) {
   useEffect(() => {
     const url = `https://www.metaweather.com/api/location/${props.city.woeid}`;
     axios.get(url).then((res) => setWeather(res.data.consolidated_weather));
-  }, []);
+  }, [props.city.woeid]);
 
   if (weather.length === 0) {
     return <h1>Loading...</h1>;
