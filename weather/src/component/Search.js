@@ -19,9 +19,8 @@ export default function Search() {
         onChange={(e) => (localSearchedString = e.target.value)}
       />
       <Link to={"/search"} onClick={submitValue}>
-        search
+        <button>search</button>
       </Link>
-      {/* <button onClick={submitValue}>Submit</button> */}
     </div>
   );
 }
