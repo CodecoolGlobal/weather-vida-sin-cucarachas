@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import { UnitContext } from "../context/UnitContext";
 import PictureCity from "./PictureCity";
+import CompassPen from "./CompassPen";
 
 export default function DisplayCity(props) {
   const [weather, setWeather] = useState([]);
@@ -44,6 +45,7 @@ export default function DisplayCity(props) {
           weather[0].wind_speed * speedAd
         )} ${speedUnit}`}</h3>
         <h3>{"Wind Direction: " + weather[0].wind_direction}</h3>
+        <CompassPen direction={weather[0].wind_direction} />
         <h3>
           {`Min temperature: ${Math.ceil(
             weather[0].min_temp * tempAd + tempAd32
