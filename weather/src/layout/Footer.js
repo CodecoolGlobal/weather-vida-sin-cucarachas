@@ -1,8 +1,8 @@
 import React from "react";
-import CatDisplay from "./CatDisplay";
-import CatFact from "./CatFact";
+import CatDisplay from "../component/CatDisplay";
+import CatFact from "../component/CatFact";
 
-const Header = () => {
+const Footer = () => {
   return (
     <div style={{ display: "inline-block" }}>
       <CatDisplay />
@@ -10,4 +10,4 @@ const Header = () => {
     </div>
   );
 };
-export default Header;
+export default Footer;
