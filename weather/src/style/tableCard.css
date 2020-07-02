@@ -7,7 +7,7 @@ body {
 }
 
 .weather-card {
-  margin: 60px auto;
+  margin: auto;
   height: 820px;
   width: 450px;
   background: #fff;
