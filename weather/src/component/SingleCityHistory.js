@@ -11,7 +11,6 @@ const SingleCityHistory = (props) => {
   );
 
   useEffect(() => {
-    console.log(props.city);
     getCityPicture();
   });
 

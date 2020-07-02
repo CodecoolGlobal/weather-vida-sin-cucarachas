@@ -6,9 +6,11 @@ const CatFact = () => {
   const [catFact] = useContext(CatFactContext);
 
   const CatParagraph = styled.p`
-    position: relative;
+    position: fixed;
     max-width: 50%;
-    left: 5%;
+    left: 10%;
+    z-index: 1;
+    top: 87%;
     background-color: #fff;
     padding: 1.125em 1.5em;
     font-size: 1.25em;
@@ -31,6 +33,7 @@ const CatFact = () => {
       filter: drop-shadow(0 -0.0625rem 0.0625rem rgba(0, 0, 0, 0.2));
     }
   `;
+
   return (
     <div style={{ display: "block", float: "left" }}>
       <CatParagraph>{catFact}</CatParagraph>

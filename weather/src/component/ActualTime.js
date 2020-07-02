@@ -29,6 +29,7 @@ const ActualTime = () => {
   }
 
   const Paragr = styled.p`
+    color: ${currentTheme.color};
     text-align: center;
     display: inline-block;
     float: left;
@@ -37,19 +38,26 @@ const ActualTime = () => {
   const Img = styled.img`
     float: right;
     margin-left: 0.5rem;
+    display: inline-block;
   `;
   const Div = styled.div`
     display: inline-block;
-    width: 10rem;
+    width: 0.5rem;
+  `;
+  const OutsideDiv = styled.div`
+    display: inline-block;
+    width: 30rem;
   `;
 
   return (
-    <Div>
-      <Paragr>
-        {dateString + " " + hourString}
+    <OutsideDiv>
+      <Div>
+        <Paragr>{dateString + " " + hourString}</Paragr>
+      </Div>
+      <Div>
         <Img src={imagePath} alt="" width="18rem" heigth="auto"></Img>
-      </Paragr>
-    </Div>
+      </Div>
+    </OutsideDiv>
   );
 };
 

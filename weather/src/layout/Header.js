@@ -37,9 +37,9 @@ export default function Header() {
   `;
 
   const Links = styled.a`
+    color: ${currentTheme.color};
     float: left;
     display: block;
-    color: black;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
@@ -50,7 +50,7 @@ export default function Header() {
     }
     & active {
       background-color: #2196f3;
-      color: white;
+      color: ${currentTheme.color};
     }
   `;
 

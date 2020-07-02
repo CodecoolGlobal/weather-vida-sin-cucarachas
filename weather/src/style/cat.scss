@@ -4,12 +4,13 @@ $size: 85px; // (Fully responsive)
 
 // Cat
 .cat {
-  position: relative;
+  position: fixed;
   top: 20px;
   left: 10px;
   height: $size;
   width: $size * 1.13;
   margin: 3rem;
+  top: 85%;
 }
 
 // Ears

@@ -18,7 +18,7 @@ function App() {
   const currentTheme = NavBarThemes[themeMode];
 
   const Div = styled.div`
-    background-color: ${currentTheme.mainBody.backgroundColor};
+    background-image: ${currentTheme.mainBody.backgroundImage};
   `;
 
   return (
