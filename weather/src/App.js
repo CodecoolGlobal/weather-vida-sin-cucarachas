@@ -19,6 +19,8 @@ function App() {
 
   const Div = styled.div`
     background-image: ${currentTheme.mainBody.backgroundImage};
+    margin-left: -0.55%;
+    width: 101.1%;
   `;
 
   return (

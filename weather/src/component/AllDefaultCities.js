@@ -12,6 +12,7 @@ export default function AllDefaultCities() {
         gridTemplateColumns: "repeat(auto-fit, minmax(450px, max-content))",
         justifyContent: "center",
         gridGap: "2rem",
+        marginTop: "5%",
       }}
     >
       {defaultCityData.map((city) => (

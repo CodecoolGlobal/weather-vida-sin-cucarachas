@@ -92,7 +92,7 @@ const WeatherHistory = () => {
       <form
         onSubmit={submitSearchData}
         className={classes.container}
-        style={{ marginBottom: "2%" }}
+        style={{ marginBottom: "2%", marginTop: "4%", marginLeft: "1%" }}
       >
         <input
           type="text"

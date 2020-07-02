@@ -13,6 +13,7 @@ export default function Search() {
 
   const SearchContainer = styled.div`
     float: right;
+    margin-top: 0.7%;
   `;
 
   const Input = styled.input`

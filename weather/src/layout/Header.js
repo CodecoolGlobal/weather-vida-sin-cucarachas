@@ -36,6 +36,11 @@ export default function Header() {
   const TopNav = styled.div`
     overflow: hidden;
     background-color: ${currentTheme.backgroundColor};
+    position: fixed;
+    top: 0;
+    margin-left: -0, 55%;
+    width: 100.05%;
+    z-index: 2;
   `;
 
   const Links = {
@@ -46,6 +51,7 @@ export default function Header() {
     padding: "14px 16px",
     textDecoration: "none",
     fontSize: "17px",
+    marginTop: "0.55%",
     ":hover": {
       backgroundColor: "#ddd",
       color: "black",
@@ -56,15 +62,18 @@ export default function Header() {
     },
   };
 
-  const Button = styled.p`
-    float: left;
-    display: block;
-    color: black;
-    text-align: center;
-    padding: 0px 16px;
-    text-decoration: none;
-    font-size: 17px;
-  `;
+  const Button = {
+    float: "left",
+    display: "block",
+    color: "black",
+    textAlign: "center",
+    padding: "0px 0px",
+    marginTop: "1.5%",
+    marginRight: "1%",
+    textDecoration: "none",
+    fontSize: "14px",
+    width: "5%",
+  };
 
   return (
     <TopNav>
@@ -76,12 +85,9 @@ export default function Header() {
       </Link>
       <ActualTime />
       <DayPeriod />
-      <Button>
-        <button onClick={switchUnit}>
-          {displayTempUnit} {displaySpeedUnit}
-        </button>
-      </Button>
-
+      <button onClick={switchUnit} style={Button}>
+        {displayTempUnit} {displaySpeedUnit}
+      </button>
       <Search />
     </TopNav>
   );

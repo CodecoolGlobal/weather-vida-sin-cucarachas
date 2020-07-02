@@ -19,8 +19,11 @@ const WeeklyForecast = (props) => {
 
   return (
     <div>
-      <div class="container_w" style={{ backgroundImage: `url("${imgURL}")` }}>
-        <div className="card_w">
+      <div
+        class="container_w"
+        style={{ backgroundImage: `url("${imgURL}")`, marginTop: "4%" }}
+      >
+        <div className="card_w" style={{ marginTop: "5%" }}>
           <div className="today_w">
             <div className="conditions_w">
               <div className="temp_w">
@@ -33,20 +36,24 @@ const WeeklyForecast = (props) => {
                   {Math.ceil(weather[0].wind_speed * speedAd)} {speedUnit}
                 </p>
                 <p>
-                  <span className="tags_w">Direction:</span>{" "}
+                  <span className="tags_w" style={{ marginLeft: "130%" }}>
+                    Direction:
+                  </span>{" "}
+                </p>
+                <p style={{ verticalAlign: "middle" }}>
                   <img
                     className="compass-pointer"
-                    width="35px"
-                    height="35px"
+                    width="100%"
+                    height="100%"
                     src="/compasspointer-100.png"
                     alt="compass"
                     style={{
                       transform: `rotate(${
                         Math.ceil(weather[0].wind_direction) + 45
                       }deg)`,
-                      borderRadius: "50%",
+                      borderRadius: "100%",
                       border: "1px solid white",
-                      padding: "2px",
+                      marginBottom: "-20%",
                     }}
                   />
                 </p>
