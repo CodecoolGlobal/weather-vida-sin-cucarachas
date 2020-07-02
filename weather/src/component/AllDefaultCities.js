@@ -5,7 +5,18 @@ import DisplayCity from "./DisplayCity";
 export default function AllDefaultCities() {
   const [defaultCityData] = useContext(DefaultCitiesContext);
 
-  return defaultCityData.map((city) => (
-    <DisplayCity key={city.woeid} city={city} />
-  ));
+  return (
+    <div
+      style={{
+        display: "grid",
+        gridTemplateColumns: "repeat(auto-fit, minmax(450px, max-content))",
+        justifyContent: "center",
+        gridGap: "2rem",
+      }}
+    >
+      {defaultCityData.map((city) => (
+        <DisplayCity key={city.woeid} city={city} />
+      ))}
+    </div>
+  );
 }

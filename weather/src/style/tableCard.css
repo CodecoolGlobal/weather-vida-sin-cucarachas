@@ -7,8 +7,8 @@ body {
 }
 
 .weather-card {
-  margin: 60px auto;
-  height: 740px;
+  margin: auto;
+  height: 820px;
   width: 450px;
   background: #fff;
   box-shadow: 0 1px 38px rgba(0, 0, 0, 0.15), 0 5px 12px rgba(0, 0, 0, 0.25);
@@ -16,11 +16,10 @@ body {
 }
 .weather-card .top {
   position: relative;
-  height: 570px;
+  height: 530px;
   width: 100%;
   overflow: hidden;
-  background: url("http://st.gde-fon.com/wallpapers_original/28692_lunnaya-noch_more_nebo_pastoral_1600x1200_www.Gde-Fon.com.jpg")
-    no-repeat;
+  /* background: url("https://pixabay.com/get/55e0dd474854ad14f6da8c7dda7936791736dee556556c48702678d2904bc65ebe_1280.jpg"); */
   background-size: cover;
   background-position: center center;
   text-align: center;
@@ -101,7 +100,7 @@ body {
   font-size: 0;
   padding: 0;
   padding-top: 20px;
-  max-height: 155px;
+  max-height: 235px;
 }
 .weather-card .bottom .wrapper .forecast a {
   text-decoration: none;

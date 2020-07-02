@@ -52,6 +52,7 @@ const WeatherHistory = () => {
       const url = `https://www.metaweather.com//api/location/${city.id}/${year}/${month}/${day}`;
       axios.get(url).then((res) => {
         let cityHistory = res.data;
+        console.log("cityhistory a weathercityben: " + cityHistory);
         cityHistory.title = city.title;
         cityHistory.woeid = city.id;
         setWeatherHistory((prevData) => [...prevData, cityHistory]);

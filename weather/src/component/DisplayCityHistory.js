@@ -5,9 +5,16 @@ import SingleCityHistory from "../component/SingleCityHistory";
 const DisplayCityHistory = () => {
   const [weatherHistory, setWeatherHistory] = useContext(WeatherHistoryContext);
   return (
-    <div>
+    <div
+      style={{
+        display: "grid",
+        gridTemplateColumns: "repeat(auto-fit, minmax(450px, max-content))",
+        justifyContent: "center",
+        gridGap: "2rem",
+      }}
+    >
       {weatherHistory.map((city) => {
-        return <SingleCityHistory city={city} />;
+        return <SingleCityHistory key={city.woeid} city={city} />;
       })}
     </div>
   );
