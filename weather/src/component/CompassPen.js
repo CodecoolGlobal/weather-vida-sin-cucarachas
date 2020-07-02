@@ -15,23 +15,26 @@ const CompassPen = (props) => {
         transform: translate(-50%, -50%) }
         }
     */
-  return (
-    <div
-      //class="compass-bg"
+
+  /*<div
+      className="compass-bg"
       style={{
-        width: "200px",
-        height: "200px",
+        width: "50%",
+        height: "50%",
         background:
           "url('http://vasilis-tsirimokos.com/codepen/compass-bg.png')",
       }}
-    >
-      <img
-        //class="compass-pointer"
-        src="http://vasilis-tsirimokos.com/codepen/compass-pointer.png"
-        alt="compass"
-        style={{ transform: `rotate(${Math.ceil(props.direction) + 45}deg)` }}
-      />
-    </div>
+    ></div>*/
+
+  return (
+    <img
+      className="compass-pointer"
+      width="50px"
+      height="50px"
+      src="/compasspointer-100.png"
+      alt="compass"
+      style={{ transform: `rotate(${Math.ceil(props.direction) + 45}deg)` }}
+    />
   );
 };
 export default CompassPen;

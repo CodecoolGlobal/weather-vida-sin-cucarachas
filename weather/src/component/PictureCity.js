@@ -18,8 +18,6 @@ export default function PictureCity(props) {
       });
   });
 
-  console.log(imgURL);
-
   if (imgURL === "") {
     return <h3>Loading...</h3>;
   } else {
