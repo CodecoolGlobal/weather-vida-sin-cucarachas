@@ -2,14 +2,20 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 
 export default function PictureCity(props) {
-  const [imgURL, setIMGURL] = useState("");
+  const [imgURL, setIMGURL] = useState(
+    "https://pixabay.com/get/55e1d6434c51a414f6da8c7dda7936791736dee556556c48702678d29049cd58be_1280.jpg"
+  );
 
   useEffect(() => {
     axios
       .get(
         `https://pixabay.com/api/?key=17290054-c3d0d031b97aa86cf5b1016d5&q=${props.title}+center`
       )
-      .then((res) => setIMGURL(res.data.hits[0].largeImageURL));
+      .then((res) => {
+        if (res.data.hits.length > 0) {
+          setIMGURL(res.data.hits[0].largeImageURL);
+        }
+      });
   });
 
   console.log(imgURL);
