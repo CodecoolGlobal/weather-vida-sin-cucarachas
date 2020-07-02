@@ -8,9 +8,9 @@ const DisplayCityHistory = () => {
     <div
       style={{
         display: "grid",
-        gridTemplateColumns: "minmax(100px, 500px) 1fr 1fr",
-        gridTemplateRows: "850px 850px 850px",
-        gridGap: "10px",
+        gridTemplateColumns: "repeat(auto-fit, minmax(450px, max-content))",
+        justifyContent: "center",
+        gridGap: "2rem",
       }}
     >
       {weatherHistory.map((city) => {

@@ -33,7 +33,9 @@ const CompassPen = (props) => {
       height="50px"
       src="/compasspointer-100.png"
       alt="compass"
-      style={{ transform: `rotate(${Math.ceil(props.direction) + 45}deg)` }}
+      style={{
+        transform: `rotate(${Math.ceil(props.direction) + 45}deg)`,
+      }}
     />
   );
 };

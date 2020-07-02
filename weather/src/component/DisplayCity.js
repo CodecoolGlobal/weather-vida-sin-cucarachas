@@ -57,7 +57,11 @@ export default function DisplayCity(props) {
         <Link
           to={{
             pathname: `/weekly-forecast/${props.city.woeid}`,
-            query: { cityWeather: weather, title: props.city.title },
+            query: {
+              cityWeather: weather,
+              title: props.city.title,
+              img: cityIMG,
+            },
           }}
           style={{ textDecoration: "none" }}
         >
@@ -79,7 +83,7 @@ export default function DisplayCity(props) {
                   <span className="temp-value">
                     {Math.ceil(weather[0].the_temp * tempAd + tempAd32)}
                   </span>
-                  <span className="deg">°</span>
+                  <span className="deg">{tempUnit}</span>
                 </p>
                 <h3 className="location">{weather[0].weather_state_name}</h3>
                 <img
