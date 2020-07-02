@@ -9,7 +9,7 @@ export default function PictureCity(props) {
   useEffect(() => {
     axios
       .get(
-        `https://pixabay.com/api/?key=17290054-c3d0d031b97aa86cf5b1016d5&q=${props.title}+center`
+        `https://pixabay.com/api/?key=17290054-c3d0d031b97aa86cf5b1016d5&q=${props.title}+town`
       )
       .then((res) => {
         if (res.data.hits.length > 0) {
