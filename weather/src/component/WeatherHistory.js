@@ -89,7 +89,11 @@ const WeatherHistory = () => {
 
   return (
     <div>
-      <form onSubmit={submitSearchData} className={classes.container}>
+      <form
+        onSubmit={submitSearchData}
+        className={classes.container}
+        style={{ marginBottom: "2%" }}
+      >
         <input
           type="text"
           onChange={changeCityNameData}

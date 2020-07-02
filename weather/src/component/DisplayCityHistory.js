@@ -10,7 +10,7 @@ const DisplayCityHistory = () => {
         display: "grid",
         gridTemplateColumns: "repeat(auto-fit, minmax(450px, max-content))",
         justifyContent: "center",
-        gridGap: "2rem",
+        gridGap: "3rem",
       }}
     >
       {weatherHistory.map((city) => {

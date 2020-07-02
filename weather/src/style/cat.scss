@@ -10,7 +10,8 @@ $size: 85px; // (Fully responsive)
   height: $size;
   width: $size * 1.13;
   margin: 3rem;
-  top: 85%;
+  top: 80%;
+  z-index: 1;
 }
 
 // Ears

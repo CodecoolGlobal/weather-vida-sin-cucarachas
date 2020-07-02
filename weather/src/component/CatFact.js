@@ -33,9 +33,9 @@ const CatFact = () => {
 
     position: fixed;
     max-width: 50%;
-    left: 10%;
+    left: 12%;
     z-index: 1;
-    top: 87%;
+    top: 80%;
     background-color: #fff;
     padding: 1.125em 1.5em;
     font-size: 1.25em;

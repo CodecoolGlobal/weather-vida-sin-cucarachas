@@ -1,12 +1,13 @@
 import React, { useContext } from "react";
 import Search from "../component/Search";
 import { UnitContext } from "../context/UnitContext";
-import { Button } from "@material-ui/core";
+//import { Button } from "@material-ui/core";
 import styled from "styled-components";
 import { NavBarThemeContext } from "../theme/NavBarThemeContext";
 import NavBarThemes from "../theme/NavBarThemes";
 import ActualTime from "../component/ActualTime";
 import DayPeriod from "../component/DayPeriod";
+import { Link } from "react-router-dom";
 
 export default function Header() {
   const [themeMode, setThemeMode] = useContext(NavBarThemeContext);
@@ -37,23 +38,23 @@ export default function Header() {
     background-color: ${currentTheme.backgroundColor};
   `;
 
-  const Links = styled.a`
-    color: ${currentTheme.color};
-    float: left;
-    display: block;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-size: 17px;
-    &:hover {
-      background-color: #ddd;
-      color: black;
-    }
-    & active {
-      background-color: #2196f3;
-      color: ${currentTheme.color};
-    }
-  `;
+  const Links = {
+    color: `${currentTheme.color}`,
+    float: "left",
+    display: "block",
+    textAlign: "center",
+    padding: "14px 16px",
+    textDecoration: "none",
+    fontSize: "17px",
+    ":hover": {
+      backgroundColor: "#ddd",
+      color: "black",
+    },
+    ":active": {
+      backgroundColor: "#2196f3",
+      color: `${currentTheme.color}`,
+    },
+  };
 
   const Button = styled.p`
     float: left;
@@ -67,8 +68,12 @@ export default function Header() {
 
   return (
     <TopNav>
-      <Links href="/">Home</Links>
-      <Links href="/history">Search in History</Links>
+      <Link style={Links} to="/">
+        Home
+      </Link>
+      <Link style={Links} to="/history">
+        Search in History
+      </Link>
       <ActualTime />
       <DayPeriod />
       <Button>

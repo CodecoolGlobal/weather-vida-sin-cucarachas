@@ -9,7 +9,8 @@
   width: 100vw;
   // background-image: url("https://images.unsplash.com/photo-1506190566487-2ea15fae2846?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=68e47766316ed9d9a7992cb57d107eac&auto=format&fit=crop&w=1868&q=80");
   background-size: cover;
-  background-position: center;
+  max-width: 100%;
+  background-position: center center;
   display: flex;
   justify-content: center;
   align-items: center;

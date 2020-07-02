@@ -13,7 +13,7 @@ export default function DayPeriod() {
   }
   return (
     <img
-      style={{ marginBottom: "1.5%", marginLeft: "5.5%" }}
+      style={{ marginBottom: "1.8%", marginLeft: "7%" }}
       src={imagePath}
       alt=""
       heigth="auto"
