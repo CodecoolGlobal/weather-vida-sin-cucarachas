@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { SearchContext } from "../context/SearchContext";
 import { Link } from "react-router-dom";
-// import styled from "styled-components";
+import styled from "styled-components";
 
 export default function Search() {
   const [searchedString, setSearchedString] = useContext(SearchContext);
@@ -11,15 +11,38 @@ export default function Search() {
     setSearchedString(localSearchedString);
   };
 
-  console.log("context searched string in Search.js: " + searchedString);
+  const SearchContainer = styled.div`
+    float: right;
+  `;
+
+  const Input = styled.input`
+    padding: 6px;
+    margin-top: 8px;
+    font-size: 17px;
+    border: none;
+  `;
+
+  const Button = styled.button`
+    float: right;
+    padding: 6px;
+    margin-top: 8px;
+    margin-right: 16px;
+    background: #ddd;
+    font-size: 17px;
+    border: none;
+    cursor: pointer;
+    &:hover {
+      background: #ccc;
+    }
+  `;
 
   return (
-    <div>
-      <input
+    <SearchContainer>
+      <Input
         type="text"
         onChange={(e) => (localSearchedString = e.target.value)}
       />
-      <button>
+      <Button>
         <Link
           to={"/search"}
           onClick={submitValue}
@@ -27,7 +50,7 @@ export default function Search() {
         >
           search
         </Link>
-      </button>
-    </div>
+      </Button>
+    </SearchContainer>
   );
 }

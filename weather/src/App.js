@@ -28,6 +28,7 @@ function App() {
           <Router>
             <SearchProvider>
               <Header />
+              <br></br>
               <Route exact path="/" component={AllDefaultCities} />
               <Route exact path="/search" component={SearchResult} />
               <Route

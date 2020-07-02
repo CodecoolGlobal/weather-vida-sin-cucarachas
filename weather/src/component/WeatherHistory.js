@@ -62,15 +62,32 @@ const WeatherHistory = () => {
   return (
     <div>
       <form onSubmit={submitSearchData}>
-        <input type="text" onChange={changeCityNameData} />
+        <input
+          type="text"
+          onChange={changeCityNameData}
+          placeholder="City name"
+        />
         <input
           type="number"
           onChange={changeYearData}
           min="2013"
           max={actualYear}
+          placeholder="2013"
         />
-        <input type="number" onChange={changeMonthData} min={1} max={12} />
-        <input type="number" onChange={changeDayData} min={1} max={31} />
+        <input
+          type="number"
+          onChange={changeMonthData}
+          min={1}
+          max={12}
+          placeholder="1"
+        />
+        <input
+          type="number"
+          onChange={changeDayData}
+          min={1}
+          max={31}
+          placeholder="1"
+        />
         <input type="submit" />
       </form>
       <h2>

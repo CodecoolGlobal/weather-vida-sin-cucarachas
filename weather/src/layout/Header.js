@@ -28,67 +28,53 @@ export default function Header() {
     setTempAd32(tempAd32 === 0 ? 32 : 0);
   }
 
-  const Ul = styled.ul`
-    background-color: ${currentTheme.backgroundColor};
-    color: ${currentTheme.textColor};
-    list-style-type: none;
-    margin: 0;
-    padding: 0.77rem;
+  let displayTempUnit = tempUnit === "°C" ? "°F" : "°C";
+  let displaySpeedUnit = speedUnit === "kph" ? "mph" : "kph";
+
+  const TopNav = styled.div`
     overflow: hidden;
+    background-color: ${currentTheme.backgroundColor};
   `;
 
-  const LiL = styled.li`
+  const Links = styled.a`
     float: left;
     display: block;
-  `;
-
-  const LiR = styled.li`
-    float: right;
-    display: block;
-  `;
-
-  const A = styled.a`
-    /* display: block; */
+    color: black;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
-    color: ${currentTheme.textColor};
+    font-size: 17px;
     &:hover {
-      background-color: #8b0000;
+      background-color: #ddd;
+      color: black;
+    }
+    & active {
+      background-color: #2196f3;
+      color: white;
     }
   `;
 
-  const Paragraph = styled.p`
+  const Button = styled.p`
+    float: left;
+    display: block;
+    color: black;
     text-align: center;
+    padding: 0px 16px;
+    text-decoration: none;
+    font-size: 17px;
   `;
 
   return (
-    <div>
-      <Ul>
-        <LiL>
-          <A href="/">Home</A>
-        </LiL>
-        <LiL>
-          <A href="/history">Search in History</A>
-        </LiL>
-        <LiR>
-          <Search />
-        </LiR>
-        <LiL>
-          <Button onClick={switchUnit} color="primary">
-            unit
-          </Button>
-        </LiL>
-        <LiL>
-          <Paragraph>
-            {tempUnit} {speedUnit}
-          </Paragraph>
-        </LiL>
-        <LiR>
-          <ActualTime />
-        </LiR>
-      </Ul>
-      <br></br>
-    </div>
+    <TopNav>
+      <Links href="/">Home</Links>
+      <Links href="/history">Search in History</Links>
+      <ActualTime />
+      <Button>
+        <button onClick={switchUnit}>
+          {displayTempUnit} {displaySpeedUnit}
+        </button>
+      </Button>
+      <Search />
+    </TopNav>
   );
 }
