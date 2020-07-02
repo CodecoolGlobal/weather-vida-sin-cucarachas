@@ -49,7 +49,9 @@ export default function DisplayCity(props) {
   //
 
   if (weather.length === 0) {
-    return <img src="/loading.gif" alt="loading cat" />;
+    return (
+      <img src="/loading.gif" alt="loading cat" width="90%" height="50%" />
+    );
   } else {
     console.log(cityIMG);
     return (
