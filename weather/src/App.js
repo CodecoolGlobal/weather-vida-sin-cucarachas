@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useContext } from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import AllDefaultCities from "./component/AllDefaultCities";
 import { SearchProvider } from "./context/SearchContext";
@@ -9,10 +9,20 @@ import { CatFactProvider } from "./context/CatFactContext";
 import Footer from "./layout/Footer";
 import { WeatherHistoryProvider } from "./context/WeatherHistoryContext";
 import WeatherHistory from "./component/WeatherHistory";
+import { NavBarThemeContext } from "./theme/NavBarThemeContext";
+import NavBarThemes from "./theme/NavBarThemes";
+import styled from "styled-components";
 
 function App() {
+  const [themeMode, setThemeMode] = useContext(NavBarThemeContext);
+  const currentTheme = NavBarThemes[themeMode];
+
+  const Div = styled.div`
+    background-color: ${currentTheme.mainBody.backgroundColor};
+  `;
+
   return (
-    <div className="App">
+    <Div className="App">
       <CatFactProvider>
         <WeatherHistoryProvider>
           <Router>
@@ -31,7 +41,7 @@ function App() {
           </Router>
         </WeatherHistoryProvider>
       </CatFactProvider>
-    </div>
+    </Div>
   );
 }
 

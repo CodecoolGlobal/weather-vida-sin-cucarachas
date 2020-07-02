@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { SearchContext } from "../context/SearchContext";
 import { Link } from "react-router-dom";
+// import styled from "styled-components";
 
 export default function Search() {
   const [searchedString, setSearchedString] = useContext(SearchContext);
@@ -18,10 +19,15 @@ export default function Search() {
         type="text"
         onChange={(e) => (localSearchedString = e.target.value)}
       />
-      <Link to={"/search"} onClick={submitValue}>
-        search
-      </Link>
-      {/* <button onClick={submitValue}>Submit</button> */}
+      <button>
+        <Link
+          to={"/search"}
+          onClick={submitValue}
+          style={{ textDecoration: "none" }}
+        >
+          search
+        </Link>
+      </button>
     </div>
   );
 }
