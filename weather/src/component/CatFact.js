@@ -6,6 +6,31 @@ const CatFact = () => {
   const [catFact] = useContext(CatFactContext);
 
   const CatParagraph = styled.p`
+    -webkit-animation: cssAnimation 5s forwards;
+    animation: cssAnimation 5s forwards;
+    @keyframes cssAnimation {
+      0% {
+        opacity: 1;
+      }
+      90% {
+        opacity: 1;
+      }
+      100% {
+        opacity: 0;
+      }
+    }
+    @-webkit-keyframes cssAnimation {
+      0% {
+        opacity: 1;
+      }
+      90% {
+        opacity: 1;
+      }
+      100% {
+        opacity: 0;
+      }
+    }
+
     position: fixed;
     max-width: 50%;
     left: 10%;
@@ -35,7 +60,7 @@ const CatFact = () => {
   `;
 
   return (
-    <div style={{ display: "block", float: "left" }}>
+    <div style={{ float: "left" }}>
       <CatParagraph>{catFact}</CatParagraph>
     </div>
   );
