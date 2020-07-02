@@ -46,7 +46,7 @@ export default function Search() {
         <Link
           to={"/search"}
           onClick={submitValue}
-          style={{ textDecoration: "none" }}
+          style={{ textDecoration: "none", color: "black" }}
         >
           search
         </Link>

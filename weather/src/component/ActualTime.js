@@ -44,20 +44,16 @@ const ActualTime = () => {
     display: inline-block;
     width: 0.5rem;
   `;
-  const OutsideDiv = styled.div`
-    display: inline-block;
-    width: 30rem;
-  `;
 
   return (
-    <OutsideDiv>
+    <Div>
       <Div>
         <Paragr>{dateString + " " + hourString}</Paragr>
       </Div>
-      <Div>
+      {/* <Div>
         <Img src={imagePath} alt="" width="18rem" heigth="auto"></Img>
-      </Div>
-    </OutsideDiv>
+      </Div> */}
+    </Div>
   );
 };
 

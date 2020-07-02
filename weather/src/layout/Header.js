@@ -6,6 +6,7 @@ import styled from "styled-components";
 import { NavBarThemeContext } from "../theme/NavBarThemeContext";
 import NavBarThemes from "../theme/NavBarThemes";
 import ActualTime from "../component/ActualTime";
+import DayPeriod from "../component/DayPeriod";
 
 export default function Header() {
   const [themeMode, setThemeMode] = useContext(NavBarThemeContext);
@@ -69,11 +70,13 @@ export default function Header() {
       <Links href="/">Home</Links>
       <Links href="/history">Search in History</Links>
       <ActualTime />
+      <DayPeriod />
       <Button>
         <button onClick={switchUnit}>
           {displayTempUnit} {displaySpeedUnit}
         </button>
       </Button>
+
       <Search />
     </TopNav>
   );

@@ -128,7 +128,7 @@ const WeatherHistory = () => {
           max={31}
           placeholder="1"
         /> */}
-        <input type="submit" />
+        <input type="submit" value="Search" />
       </form>
       <DisplayCityHistory />
     </div>
