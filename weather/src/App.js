@@ -25,9 +25,9 @@ function App() {
 
   return (
     <Div className="App">
-      <CatFactProvider>
-        <WeatherHistoryProvider>
-          <Router>
+      <Router>
+        <CatFactProvider>
+          <WeatherHistoryProvider>
             <SearchProvider>
               <Header />
               <br></br>
@@ -41,9 +41,9 @@ function App() {
               <Route exact path="/history" component={WeatherHistory} />
             </SearchProvider>
             <Footer />
-          </Router>
-        </WeatherHistoryProvider>
-      </CatFactProvider>
+          </WeatherHistoryProvider>
+        </CatFactProvider>
+      </Router>
     </Div>
   );
 }

@@ -1,22 +1,22 @@
 import React, { useContext } from "react";
 import { CatFactContext } from "../context/CatFactContext";
 import "../style/cat.scss";
-import axios from "axios";
+import { getCatFact } from "../apicalls/catapi";
 
 const CatDisplay = () => {
   const [catFact, setCatFact] = useContext(CatFactContext);
 
-  const getCatFact = () => {
-    axios
-      .get("https://catfact.ninja/fact?max_length=125")
-      .then((res) => setCatFact(res.data.fact));
-    console.log(catFact);
-  };
+  // const getCatFact = () => {
+  //   axios
+  //     .get("https://catfact.ninja/fact?max_length=125")
+  //     .then((res) => setCatFact(res.data.fact));
+  //   console.log(catFact);
+  // };
 
   return (
     <div
       className="cat"
-      onClick={getCatFact}
+      onClick={() => getCatFact({ catFact, setCatFact })}
       style={{ display: "block", float: "left" }}
     >
       <div className="ear ear--left"></div>

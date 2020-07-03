@@ -3,7 +3,7 @@ import { DefaultCitiesContext } from "../context/DefaultCitiesContext";
 import DisplayCity from "./DisplayCity";
 
 export default function AllDefaultCities() {
-  const [defaultCityData] = useContext(DefaultCitiesContext);
+  const { defaultCityData } = useContext(DefaultCitiesContext);
 
   return (
     <div

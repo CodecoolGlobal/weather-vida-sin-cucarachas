@@ -30,7 +30,7 @@ export const DefaultCitiesProvider = (props) => {
 
   return (
     <DefaultCitiesContext.Provider
-      value={[defaultCityData, setDefaultCityData]}
+      value={{ defaultCityData, setDefaultCityData }}
     >
       {props.children}
     </DefaultCitiesContext.Provider>

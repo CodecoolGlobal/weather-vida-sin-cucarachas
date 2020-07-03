@@ -3,10 +3,14 @@ import { NavBarThemeContext } from "../theme/NavBarThemeContext";
 import NavBarThemes from "../theme/NavBarThemes";
 import styled from "styled-components";
 
+// styled-components
+
 const ActualTime = () => {
   const [themeMode, setThemeMode] = useContext(NavBarThemeContext);
   const currentTheme = NavBarThemes[themeMode];
   let date = new Date();
+
+  // moment js
 
   let month = date.getMonth() < 10 ? "0" + date.getMonth() : date.getMonth();
   let day = date.getDay() < 10 ? "0" + date.getDay() : date.getDay();
