@@ -63,7 +63,7 @@ const SingleCityHistory = (props) => {
                 <span className="temp-value">
                   {Math.ceil(weather[0].the_temp * tempAd + tempAd32)}
                 </span>
-                <span className="deg">°</span>
+                <span className="deg">{tempUnit}</span>
               </p>
               <h3 className="location">{weather[0].weather_state_name}</h3>
               <img

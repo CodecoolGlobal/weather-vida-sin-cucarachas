@@ -1,7 +1,6 @@
 import React, { useContext } from "react";
 import Search from "../component/Search";
 import { UnitContext } from "../context/UnitContext";
-//import { Button } from "@material-ui/core";
 import styled from "styled-components";
 import { NavBarThemeContext } from "../theme/NavBarThemeContext";
 import NavBarThemes from "../theme/NavBarThemes";
