@@ -15,3 +15,5 @@ Visitor can check the current weather of the city or a detailed weekly forecast.
 - Switch theme: After 7 o'clock the theme of the page automatically switch to dark theme
 
 #### Preview
+Preview of the home page
+![Preview of the home page](/weather/readme-image/preview.png)
